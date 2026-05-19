@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nos Produits - China Square</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <style>
+    .products-page { padding: 40px 0; }
+    .page-header { margin-bottom: 30px; }
+    .page-header h1 { margin-bottom: 10px; }
+    .breadcrumb { color: #757575; font-size: 0.875rem; }
+    .breadcrumb a { color: #DA291C; }
+    .products-layout { display: grid; grid-template-columns: 250px 1fr; gap: 30px; }
+    .filters-sidebar { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); height: fit-content; position: sticky; top: 120px; }
+    .filter-section { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid #e0e0e0; }
+    .filter-section:last-child { margin: 0; padding: 0; border: none; }
+    .filter-title { font-size: 1rem; font-weight: 600; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
+    .filter-options { display: flex; flex-direction: column; gap: 10px; }
+    .filter-option { display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.9375rem; color: #424242; }
+    .filter-option input { accent-color: #DA291C; }
+    .filter-option:hover { color: #DA291C; }
+    .price-range { display: flex; gap: 10px; align-items: center; }
+    .price-range input { width: 80px; padding: 8px; border: 1px solid #e0e0e0; border-radius: 6px; text-align: center; }
+    .products-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .products-count { color: #757575; }
+    .sort-select { padding: 10px 15px; border: 1px solid #e0e0e0; border-radius: 8px; outline: none; cursor: pointer; }
+    .view-toggle { display: flex; gap: 10px; }
+    .view-btn { width: 40px; height: 40px; border: 1px solid #e0e0e0; border-radius: 8px; background: white; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    .view-btn.active { background: #DA291C; color: white; border-color: #DA291C; }
+    .products-grid-page { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    @media (max-width: 1200px) { .products-grid-page { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 992px) { .products-layout { grid-template-columns: 1fr; } .filters-sidebar { position: static; } .products-grid-page { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 576px) { .products-grid-page { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-main">
+      <div class="container">
+        <div class="header-content">
+          <a href="../index.html" class="logo">
+            <span class="logo-icon">🛒</span>
+            <span class="logo-text">
+              <span class="logo-china">China</span>
+              <span class="logo-square">Square</span>
+            </span>
+          </a>
+          <div class="search-bar">
+            <input type="text" placeholder="Rechercher produits...">
+            <button class="search-btn">🔍</button>
+          </div>
+          <div class="header-icons">
+            <a href="wishlist.html" class="header-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              <span class="icon-badge">0</span>
+            </a>
+            <a href="cart.html" class="header-icon cart-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+              <span class="icon-badge">0</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="products-page">
+    <div class="container">
+      <div class="page-header">
+        <h1>Tous Nos Produits</h1>
+        <p class="breadcrumb"><a href="../index.html">Accueil</a> / Produits</p>
+      </div>
+      
+      <div class="products-layout">
+        <aside class="filters-sidebar">
+          <div class="filter-section">
+            <h4 class="filter-title">📂 Catégories</h4>
+            <div class="filter-options">
+              <label class="filter-option"><input type="checkbox" checked> Vêtements</label>
+              <label class="filter-option"><input type="checkbox"> Électronique</label>
+              <label class="filter-option"><input type="checkbox"> Maison</label>
+              <label class="filter-option"><input type="checkbox"> Beauté</label>
+              <label class="filter-option"><input type="checkbox"> Sports</label>
+              <label class="filter-option"><input type="checkbox"> Jouets</label>
+              <label class="filter-option"><input type="checkbox"> Sacs</label>
+              <label class="filter-option"><input type="checkbox"> Bijoux</label>
+            </div>
+          </div>
+          
+          <div class="filter-section">
+            <h4 class="filter-title">💰 Prix</h4>
+            <div class="price-range">
+              <input type="number" placeholder="Min" value="0">
+              <span>-</span>
+              <input type="number" placeholder="Max" value="50">
+            </div>
+          </div>
+          
+          <div class="filter-section">
+            <h4 class="filter-title">⭐ Notation</h4>
+            <div class="filter-options">
+              <label class="filter-option"><input type="checkbox"> 5 étoiles</label>
+              <label class="filter-option"><input type="checkbox"> 4+ étoiles</label>
+              <label class="filter-option"><input type="checkbox"> 3+ étoiles</label>
+            </div>
+          </div>
+          
+          <div class="filter-section">
+            <h4 class="filter-title">🚚 Livraison</h4>
+            <div class="filter-options">
+              <label class="filter-option"><input type="checkbox"> Livraison gratuite</label>
+              <label class="filter-option"><input type="checkbox"> 7-15 jours</label>
+              <label class="filter-option"><input type="checkbox"> Express</label>
+            </div>
+          </div>
+        </aside>
+        
+        <div class="products-main">
+          <div class="products-header">
+            <span class="products-count">245 produits</span>
+            <div style="display: flex; gap: 15px; align-items: center;">
+              <select class="sort-select">
+                <option>Trier par: Pertinence</option>
+                <option>Prix: croissant</option>
+                <option>Prix: décroissant</option>
+                <option>Nouveautés</option>
+                <option>Meilleures ventes</option>
+              </select>
+              <div class="view-toggle">
+                <button class="view-btn active">▦</button>
+                <button class="view-btn">☰</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="products-grid-page">
+            <!-- Product 1 -->
+            <div class="product-card">
+              <div class="product-image">
+                <span class="product-badge badge-red">-50%</span>
+                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=300&h=300&fit=crop" alt="Veste">
+                <button class="wishlist-btn">❤️</button>
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Veste en cuir synthétique</h3>
+                <div class="product-rating"><span class="stars">★★★★★</span> <span class="rating-count">(2,847)</span></div>
+                <div class="product-price"><span class="price-old">$19.99</span> <span class="price-new">$9.99</span></div>
+                <button class="btn btn-primary btn-block" onclick="addToCart(1, 'Veste en cuir', 9.99)">Ajouter au panier</button>
+              </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+              <div class="product-image">
+                <span class="product-badge badge-red">-65%</span>
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop" alt="Casque">
+                <button class="wishlist-btn">❤️</button>
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Casque Bluetooth 5.0</h3>
+                <div class="product-rating"><span class="stars">★★★★★</span> <span class="rating-count">(1,923)</span></div>
+                <div class="product-price"><span class="price-old">$28.57</span> <span class="price-new">$9.99</span></div>
+                <button class="btn btn-primary btn-block" onclick="addToCart(2, 'Casque Bluetooth', 9.99)">Ajouter au panier</button>
+              </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+              <div class="product-image">
+                <span class="product-badge badge-green">NEW</span>
+                <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=300&h=300&fit=crop" alt="Robe">
+                <button class="wishlist-btn">❤️</button>
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Robe été bohème</h3>
+                <div class="product-rating"><span class="stars">★★★★☆</span> <span class="rating-count">(3,421)</span></div>
+                <div class="product-price"><span class="price-new">$7.99</span></div>
+                <button class="btn btn-primary btn-block" onclick="addToCart(3, 'Robe été bohème', 7.99)">Ajouter au panier</button>
+              </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card">
+              <div class="product-image">
+                <span class="product-badge badge-red">-45%</span>
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=300&fit=crop" alt="Montre">
+                <button class="wishlist-btn">❤️</button>
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Montre intelligente sport</h3>
+                <div class="product-rating"><span class="stars">★★★★★</span> <span class="rating-count">(1,056)</span></div>
+                <div class="product-price"><span class="price-old">$36.29</span> <span class="price-new">$19.99</span></div>
+                <button class="btn btn-primary btn-block" onclick="addToCart(4, 'Montre sport', 19.99)">Ajouter au panier</button>
+              </div>
+            </div>
+            
+            <!-- Product 5 -->
+            <div class="product-card">
+              <div class="product-image">
+                <span class="product-badge badge-red">-60%</span>
+                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=300&h=300&fit=crop" alt="Sac">
+                <button class="wishlist-btn">❤️</button>
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Sac à dos travel</h3>
+                <div class="product-rating"><span class="stars">★★★★☆</span> <span class="rating-count">(4,231)</span></div>
+                <div class="product-price"><span class="price-old">$24.99</span> <span class="price-new">$9.99</span></div>
+                <button class="btn btn-primary btn-block" onclick="addToCart(5, 'Sac à dos', 9.99)">Ajouter au panier</button>
+              </div>
+            </div>
+            
+            <!-- Product 6 -->
+            <div class="product-card">
+              <div class="product-image">
+                <span class="product-badge badge-yellow">HOT</span>
+                <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300&h=300&fit=crop" alt="Ustensiles">
+                <button class="wishlist-btn">❤️</button>
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Kit ustensiles cuisine 15 pièces</h3>
+                <div class="product-rating"><span class="stars">★★★★★</span> <span class="rating-count">(5,892)</span></div>
+                <div class="product-price"><span class="price-old">$33.29</span> <span class="price-new">$9.99</span></div>
+                <button class="btn btn-primary btn-block" onclick="addToCart(6, 'Kit ustensiles', 9.99)">Ajouter au panier</button>
+              </div>
+            </div>
+            
+            <!-- Product 7 -->
+            <div class="product-card">
+              <div class="product-image">
+                <span class="product-badge badge-red">-50%</span>
+                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=300&h=300&fit=crop" alt="Maquillage">
+                <button class="wishlist-btn">❤️</button>
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Palette maquillage 24 couleurs</h3>
+                <div class="product-rating"><span class="stars">★★★★★</span> <span class="rating-count">(2,156)</span></div>
+                <div class="product-price"><span class="price-old">$19.99</span> <span class="price-new">$9.99</span></div>
+                <button class="btn btn-primary btn-block" onclick="addToCart(7, 'Palette maquillage', 9.99)">Ajouter au panier</button>
+              </div>
+            </div>
+            
+            <!-- Product 8 -->
+            <div class="product-card">
+              <div class="product-image">
+                <span class="product-badge badge-red">-55%</span>
+                <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&h=300&fit=crop" alt="Lunettes">
+                <button class="wishlist-btn">❤️</button>
+              </div>
+              <div class="product-info">
+                <h3 class="product-title">Lunettes soleil vintage</h3>
+                <div class="product-rating"><span class="stars">★★★★☆</span> <span class="rating-count">(1,789)</span></div>
+                <div class="product-price"><span class="price-old">$17.77</span> <span class="price-new">$7.99</span></div>
+                <button class="btn btn-primary btn-block" onclick="addToCart(8, 'Lunettes soleil', 7.99)">Ajouter au panier</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2025 China Square. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/cart.js"></script>
+</body>
+</html>

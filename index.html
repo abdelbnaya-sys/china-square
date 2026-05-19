@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>China Square - Les Meilleurs Prix</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #e63946;
+      --primary-dark: #c62d38;
+      --secondary: #f4a261;
+      --accent: #2a9d8f;
+      --dark: #1d1d2c;
+      --dark-light: #2d2d3a;
+      --light: #f8f9fa;
+      --white: #ffffff;
+      --gray-100: #f5f5f5;
+      --gray-200: #e0e0e0;
+      --gray-400: #9e9e9e;
+      --gray-600: #757575;
+      --gradient: linear-gradient(135deg, #e63946 0%, #ff6b6b 100%);
+      --gradient-dark: linear-gradient(135deg, #1d1d2c 0%, #2d2d3a 100%);
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.12);
+      --shadow-lg: 0 20px 50px rgba(0,0,0,0.15);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* === TOP BAR === */
+    .top-bar {
+      background: var(--dark);
+      color: var(--white);
+      padding: 10px 0;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .top-bar span {
+      opacity: 0.95;
+    }
+
+    .top-bar strong {
+      color: var(--secondary);
+    }
+
+    /* === HEADER === */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-main {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .header-grid {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span:first-child {
+      color: var(--primary);
+    }
+
+    .logo span:last-child {
+      color: var(--secondary);
+      position: relative;
+    }
+
+    .logo span:last-child::before {
+      content: '•';
+      position: absolute;
+      left: -8px;
+      color: var(--gray-400);
+    }
+
+    /* Search Bar */
+    .search-container {
+      position: relative;
+    }
+
+    .search-bar {
+      display: flex;
+      background: var(--light);
+      border-radius: 50px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      transition: var(--transition);
+    }
+
+    .search-bar:focus-within {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(230, 57, 70, 0.1);
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 14px 24px;
+      border: none;
+      background: transparent;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .search-bar button {
+      padding: 14px 28px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .search-bar button:hover {
+      background: var(--primary-dark);
+    }
+
+    /* Nav Icons */
+    .nav-icons {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-icon {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      color: var(--dark);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .nav-icon:hover {
+      color: var(--primary);
+    }
+
+    .nav-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke-width: 1.5;
+    }
+
+    .nav-icon .badge {
+      position: absolute;
+      top: -8px;
+      right: -10px;
+      background: var(--primary);
+      color: white;
+      font-size: 10px;
+      min-width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    .nav-icon:last-child .badge {
+      background: var(--secondary);
+      color: var(--dark);
+    }
+
+    /* Mega Nav */
+    .mega-nav {
+      background: var(--white);
+      border-top: 3px solid var(--primary);
+    }
+
+    .mega-menu {
+      display: flex;
+      gap: 0;
+      list-style: none;
+    }
+
+    .mega-item {
+      position: relative;
+    }
+
+    .mega-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 20px;
+      font-weight: 500;
+      color: var(--dark);
+      font-size: 14px;
+      transition: var(--transition);
+    }
+
+    .mega-link:hover {
+      background: rgba(230, 57, 70, 0.05);
+      color: var(--primary);
+    }
+
+    .mega-link.sale {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* === HERO === */
+    .hero {
+      background: var(--gradient);
+      position: relative;
+      overflow: hidden;
+      min-height: 580px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 60%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.08);
+      transform: rotate(12deg);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -5%;
+      width: 40%;
+      height: 150%;
+      background: rgba(0, 0, 0, 0.08);
+      transform: rotate(-8deg);
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      padding: 60px 0;
+    }
+
+    .hero-text h1 {
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1.08;
+      margin-bottom: 20px;
+      color: var(--white);
+    }
+
+    .hero-text h1 span {
+      display: block;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      opacity: 0.9;
+      margin-bottom: 32px;
+      color: var(--white);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .btn-hero {
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-hero-primary {
+      background: var(--white);
+      color: var(--primary);
+    }
+
+    .btn-hero-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-hero-secondary {
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--white);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-hero-secondary:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+    }
+
+    .stat {
+      text-align: left;
+    }
+
+    .stat-value {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--white);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .hero-visual {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      max-width: 480px;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      text-align: center;
+      font-size: 56px;
+      backdrop-filter: blur(10px);
+      transition: var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-card:nth-child(2) {
+      transform: translateY(24px);
+    }
+
+    .hero-card:nth-child(2):hover {
+      transform: translateY(16px) scale(1.02);
+    }
+
+    .hero-card:nth-child(3) {
+      transform: translateY(-24px);
+    }
+
+    .hero-card:nth-child(3):hover {
+      transform: translateY(-32px) scale(1.02);
+    }
+
+    /* === SECTIONS === */
+    .section {
+      padding: 72px 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title::before {
+      content: '';
+      width: 5px;
+      height: 28px;
+      background: var(--primary);
+      border-radius: 3px;
+    }
+
+    .see-all {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .see-all:hover {
+      text-decoration: underline;
+    }
+
+    /* === CATEGORIES === */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+    }
+
+    .category-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 28px 16px;
+      text-align: center;
+      transition: var(--transition);
+      cursor: pointer;
+      border: 1px solid var(--gray-100);
+    }
+
+    .category-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary);
+    }
+
+    .category-icon {
+      font-size: 44px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .category-name {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--dark);
+    }
+
+    /* === PRODUCTS GRID === */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+    }
+
+    /* Product Card */
+    .product-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .product-image {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: var(--gray-100);
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.08);
+    }
+
+    .product-badges {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      z-index: 2;
+    }
+
+    .badge {
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .badge-sale {
+      background: var(--primary);
+      color: white;
+    }
+
+    .badge-new {
+      background: var(--accent);
+      color: white;
+    }
+
+    .badge-hot {
+      background: var(--secondary);
+      color: var(--dark);
+    }
+
+    .wishlist-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+      background: var(--white);
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+      z-index: 2;
+      font-size: 16px;
+    }
+
+    .product-card:hover .wishlist-btn {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .wishlist-btn:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .product-actions {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+      display: flex;
+      gap: 8px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: var(--transition);
+      z-index: 2;
+    }
+
+    .product-card:hover .product-actions {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .action-btn {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 12px;
+    }
+
+    .action-btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .action-btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .action-btn-secondary {
+      background: var(--white);
+      color: var(--dark);
+      width: 40px;
+      flex: none;
+    }
+
+    .action-btn-secondary:hover {
+      background: var(--gray-100);
+    }
+
+    .product-info {
+      padding: 16px;
+    }
+
+    .product-category {
+      font-size: 11px;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .product-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: var(--dark);
+    }
+
+    .product-rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .rating-stars {
+      color: var(--secondary);
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .rating-count {
+      font-size: 12px;
+      color: var(--gray-400);
+    }
+
+    .product-price {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .price-current {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .price-old {
+      font-size: 14px;
+      color: var(--gray-400);
+      text-decoration: line-through;
+    }
+
+    /* Flash Countdown */
+    .countdown-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .countdown-label {
+      font-size: 14px;
+      color: var(--gray-600);
+    }
+
+    .countdown {
+      background: var(--primary);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-family: 'SF Mono', 'Consolas', monospace;
+      font-size: 15px;
+      letter-spacing: 1px;
+    }
+
+    /* === BANNER === */
+    .banner-section {
+      padding: 0 0 72px;
+    }
+
+    .banner {
+      background: var(--gradient);
+      border-radius: var(--radius-xl);
+      padding: 64px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 50%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.1);
+      transform: rotate(15deg);
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .banner h2 {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .banner p {
+      opacity: 0.9;
+      font-size: 16px;
+    }
+
+    .banner-btn {
+      background: var(--white);
+      color: var(--primary);
+      padding: 18px 36px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: var(--transition);
+      position: relative;
+      z-index: 1;
+    }
+
+    .banner-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* === TRUST === */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .trust-item {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border: 1px solid var(--gray-100);
+      transition: var(--transition);
+    }
+
+    .trust-item:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+
+    .trust-icon {
+      font-size: 40px;
+      width: 64px;
+      height: 64px;
+      background: var(--light);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .trust-text h4 {
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .trust-text p {
+      font-size: 13px;
+      color: var(--gray-600);
+      margin: 0;
+    }
+
+    /* === FOOTER === */
+    .footer {
+      background: var(--dark);
+      color: white;
+      padding: 72px 0 24px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr repeat(3, 1fr);
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-logo {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .footer-logo span:first-child {
+      color: var(--primary);
+    }
+
+    .footer-logo span:last-child {
+      color: var(--secondary);
+    }
+
+    .footer-about p {
+      color: var(--gray-400);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-link {
+      width: 42px;
+      height: 42px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      font-size: 18px;
+    }
+
+    .social-link:hover {
+      background: var(--primary);
+      transform: translateY(-4px);
+    }
+
+    .footer-col h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-col ul li a {
+      color: var(--gray-400);
+      font-size: 14px;
+      transition: var(--transition);
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--primary);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p {
+      color: var(--gray-400);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .payment-methods {
+      display: flex;
+      gap: 12px;
+      font-size: 24px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .hero-content {
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-visual {
+        display: none;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .hero-stats {
+        justify-content: center;
+      }
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .categories-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-grid {
+        grid-template-columns: auto auto;
+        gap: 16px;
+      }
+      .search-container {
+        display: none;
+      }
+      .nav-icons {
+        gap: 20px;
+      }
+      .hero-text h1 {
+        font-size: 40px;
+      }
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 24px;
+        gap: 24px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <span>🚚 <strong>Livraison gratuite</strong> pour commandes +39€ | Code <strong>CHINA2</strong> pour 2€ de réduction !</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-main">
+      <div class="container">
+        <div class="header-grid">
+          <a href="#" class="logo">
+            <span>China</span><span>Square</span>
+          </a>
+          
+          <div class="search-container">
+            <div class="search-bar">
+              <input type="text" placeholder="Rechercher produits, marques, catégories...">
+              <button>Rechercher</button>
+            </div>
+          </div>
+          
+          <nav class="nav-icons">
+            <a href="#" class="nav-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+              <span>Favoris</span>
+              <span class="badge">3</span>
+            </a>
+            <a href="#" class="nav-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+              </svg>
+              <span>Panier</span>
+              <span class="badge">2</span>
+            </a>
+            <a href="#" class="nav-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+              <span>Compte</span>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+    
+    <nav class="mega-nav">
+      <div class="container" style="padding: 0 24px;">
+        <ul class="mega-menu">
+          <li class="mega-item"><a href="#" class="mega-link">Toutes catégories</a></li>
+          <li class="mega-item"><a href="#" class="mega-link">Vêtements</a></li>
+          <li class="mega-item"><a href="#" class="mega-link">Électronique</a></li>
+          <li class="mega-item"><a href="#" class="mega-link">Maison</a></li>
+          <li class="mega-item"><a href="#" class="mega-link">Beauté</a></li>
+          <li class="mega-item"><a href="#" class="mega-link">Sports</a></li>
+          <li class="mega-item"><a href="#" class="mega-link">Jouets</a></li>
+          <li class="mega-item"><a href="#" class="mega-link">Sacs</a></li>
+          <li class="mega-item"><a href="#" class="mega-link sale">SOLDES 🔥</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <span class="hero-tag">🔥 Ventes Flash</span>
+          <h1>Les Meilleurs<br><span>Prix Du Moment</span></h1>
+          <p>Jusqu'à -70% sur des milliers de produits.<br>Prix imbattables garantis !</p>
+          <div class="hero-buttons">
+            <a href="#" class="btn-hero btn-hero-primary">Découvrir →</a>
+            <a href="#" class="btn-hero btn-hero-secondary">Nouveautés</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-value">50K+</span>
+              <span class="stat-label">Produits</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">100+</span>
+              <span class="stat-label">Pays livrés</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">4.8★</span>
+              <span class="stat-label">Note clients</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">👗</div>
+          <div class="hero-card">📱</div>
+          <div class="hero-card">👜</div>
+          <div class="hero-card">💄</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Catégories Populaires</h2>
+        <a href="#" class="see-all">Voir tout →</a>
+      </div>
+      <div class="categories-grid">
+        <div class="category-card">
+          <span class="category-icon">👗</span>
+          <span class="category-name">Mode Femme</span>
+        </div>
+        <div class="category-card">
+          <span class="category-icon">👔</span>
+          <span class="category-name">Mode Homme</span>
+        </div>
+        <div class="category-card">
+          <span class="category-icon">📱</span>
+          <span class="category-name">Électronique</span>
+        </div>
+        <div class="category-card">
+          <span class="category-icon">🏠</span>
+          <span class="category-name">Maison</span>
+        </div>
+        <div class="category-card">
+          <span class="category-icon">💄</span>
+          <span class="category-name">Beauté</span>
+        </div>
+        <div class="category-card">
+          <span class="category-icon">⚽</span>
+          <span class="category-name">Sports</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flash Sales -->
+  <section class="section" style="background: var(--white);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">⚡ Ventes Flash</h2>
+        <div class="countdown-wrapper">
+          <span class="countdown-label">Se termine dans :</span>
+          <span class="countdown">04:23:15</span>
+        </div>
+      </div>
+      <div class="products-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&h=400&fit=crop" alt="Veste">
+            <div class="product-badges">
+              <span class="badge badge-sale">-50%</span>
+            </div>
+            <button class="wishlist-btn">♡</button>
+            <div class="product-actions">
+              <button class="action-btn action-btn-primary">Ajouter</button>
+              <button class="action-btn action-btn-secondary">♡</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Vêtements</span>
+            <h3 class="product-title">Veste en cuir synthétique premium</h3>
+            <div class="product-rating">
+              <span class="rating-stars">★★★★★</span>
+              <span class="rating-count">(2,847)</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">$9.99</span>
+              <span class="price-old">$19.99</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop" alt="Casque">
+            <div class="product-badges">
+              <span class="badge badge-sale">-65%</span>
+            </div>
+            <button class="wishlist-btn">♡</button>
+            <div class="product-actions">
+              <button class="action-btn action-btn-primary">Ajouter</button>
+              <button class="action-btn action-btn-secondary">♡</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Électronique</span>
+            <h3 class="product-title">Casque Bluetooth 5.0 Sans Fil</h3>
+            <div class="product-rating">
+              <span class="rating-stars">★★★★★</span>
+              <span class="rating-count">(1,923)</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">$9.99</span>
+              <span class="price-old">$28.57</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=400&fit=crop" alt="Robe">
+            <div class="product-badges">
+              <span class="badge badge-new">NEW</span>
+            </div>
+            <button class="wishlist-btn">♡</button>
+            <div class="product-actions">
+              <button class="action-btn action-btn-primary">Ajouter</button>
+              <button class="action-btn action-btn-secondary">♡</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Mode</span>
+            <h3 class="product-title">Robe été bohème fluide</h3>
+            <div class="product-rating">
+              <span class="rating-stars">★★★★☆</span>
+              <span class="rating-count">(3,421)</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">$7.99</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop" alt="Montre">
+            <div class="product-badges">
+              <span class="badge badge-sale">-45%</span>
+            </div>
+            <button class="wishlist-btn">♡</button>
+            <div class="product-actions">
+              <button class="action-btn action-btn-primary">Ajouter</button>
+              <button class="action-btn action-btn-secondary">♡</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Accessoires</span>
+            <h3 class="product-title">Montre intelligente sport</h3>
+            <div class="product-rating">
+              <span class="rating-stars">★★★★★</span>
+              <span class="rating-count">(1,056)</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">$19.99</span>
+              <span class="price-old">$36.29</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&h=400&fit=crop" alt="Sac">
+            <div class="product-badges">
+              <span class="badge badge-sale">-60%</span>
+            </div>
+            <button class="wishlist-btn">♡</button>
+            <div class="product-actions">
+              <button class="action-btn action-btn-primary">Ajouter</button>
+              <button class="action-btn action-btn-secondary">♡</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Sacs</span>
+            <h3 class="product-title">Sac à dos travel waterproof</h3>
+            <div class="product-rating">
+              <span class="rating-stars">★★★★☆</span>
+              <span class="rating-count">(4,231)</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">$9.99</span>
+              <span class="price-old">$24.99</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop" alt="Cuisine">
+            <div class="product-badges">
+              <span class="badge badge-hot">HOT</span>
+            </div>
+            <button class="wishlist-btn">♡</button>
+            <div class="product-actions">
+              <button class="action-btn action-btn-primary">Ajouter</button>
+              <button class="action-btn action-btn-secondary">♡</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-category">Maison</span>
+            <h3 class="product-title">Kit ustensiles cuisine 15 pièces</h3>
+            <div class="product-rating">
+              <span class="rating-stars">★★★★★</span>
+              <span class="rating-count">(5,892)</span>
+            </div>
+            <div class="product-price">
+              <span class="price-current">$9.99</span>
+              <span class="price-old">$33.29</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner -->
+  <section class="banner-section">
+    <div class="container">
+      <div class="banner">
+        <div class="banner-content">
+          <h2>Inscrivez-vous pour<br>les meilleures offres</h2>
+          <p>Recevez -10% sur votre première commande</p>
+        </div>
+        <a href="#" class="banner-btn">S'inscrire →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon">🚚</div>
+          <div class="trust-text">
+            <h4>Livraison Mondiale</h4>
+            <p>Dans plus de 100 pays</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">🔒</div>
+          <div class="trust-text">
+            <h4>Paiement Sécurisé</h4>
+            <p>SSL 256-bit encryption</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">↩️</div>
+          <div class="trust-text">
+            <h4>Retours Gratuits</h4>
+            <p>30 jours pour retourner</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">💬</div>
+          <div class="trust-text">
+            <h4>Support 24/7</h4>
+            <p>Toujours disponible</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="#" class="footer-logo"><span>China</span><span>Square</span></a>
+          <p>Votre destination pour les meilleures offres en ligne. Qualité, prix bas et livraison mondiale.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link">📘</a>
+            <a href="#" class="social-link">📸</a>
+            <a href="#" class="social-link">🐦</a>
+            <a href="#" class="social-link">📌</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>À propos</h4>
+          <ul>
+            <li><a href="#">Qui sommes-nous</a></li>
+            <li><a href="#">Notre histoire</a></li>
+            <li><a href="#">Avis clients</a></li>
+            <li><a href="#">Programme fidélité</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Service Client</h4>
+          <ul>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Suivi commande</a></li>
+            <li><a href="#">Politique retours</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Catégories</h4>
+          <ul>
+            <li><a href="#">Vêtements</a></li>
+            <li><a href="#">Électronique</a></li>
+            <li><a href="#">Maison</a></li>
+            <li><a href="#">Beauté</a></li>
+            <li><a href="#">Sports</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 China Square. Tous droits réservés.</p>
+        <div class="payment-methods">💳 🅿️ 💳 📱</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
